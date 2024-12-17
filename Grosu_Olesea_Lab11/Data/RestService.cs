@@ -8,10 +8,10 @@ using Grosu_Olesea_Lab11.Models;
 
 namespace Grosu_Olesea_Lab11.Data
 {
-    public class RestService : IRestService // Ensure class is public
+    public class RestService : IRestService 
     {
         HttpClient client;
-        string RestUrl = "https://localhost:7055/api/shoplists/{0}";
+        string RestUrl = "https://192.168.0.92:45456/api/shoplists/{0}";
 
         public List<ShopList> Items { get; private set; }
 
@@ -42,6 +42,7 @@ namespace Grosu_Olesea_Lab11.Data
             }
             return Items;
         }
+
 
         public async Task SaveShopListAsync(ShopList item, bool isNewItem)
         {

@@ -4,7 +4,7 @@ using Grosu_Olesea_Lab11.Models;
 
 namespace Grosu_Olesea_Lab11.Data
 {
-    public class ShoppingListDatabase // Ensure class is public
+    public class ShoppingListDatabase 
     {
         IRestService restService;
 
@@ -13,10 +13,11 @@ namespace Grosu_Olesea_Lab11.Data
             restService = service;
         }
 
-        public Task<List<ShopList>> GetShopListsAsync()
+        public async Task<List<ShopList>> GetShopListsAsync()
         {
-            return restService.RefreshDataAsync();
+            return await restService.RefreshDataAsync();
         }
+
 
         public Task SaveShopListAsync(ShopList item, bool isNewItem = true)
         {
